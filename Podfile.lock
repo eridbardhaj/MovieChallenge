@@ -1,15 +1,27 @@
 PODS:
   - Alamofire (3.3.1)
   - ObjectMapper (1.2.0)
+  - RxCocoa (2.3.1):
+    - RxSwift (~> 2.3.1)
+  - RxOptional (2.0.0):
+    - RxCocoa (~> 2.0)
+    - RxSwift (~> 2.0)
+  - RxSwift (2.3.1)
 
 DEPENDENCIES:
   - Alamofire
   - ObjectMapper
+  - RxCocoa
+  - RxOptional
+  - RxSwift
 
 SPEC CHECKSUMS:
   Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
   ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f
+  RxCocoa: a2baaf3462b989559a51dce59d78fbebb8fe0afa
+  RxOptional: b77fb47a0190213cf8a37c7a2b7fda28160b4563
+  RxSwift: 829b2843e9eddc77a02cb3f5117f0d55f8f646f1
 
-PODFILE CHECKSUM: ffae3ce9b0a6608fdb4f251bb19fb9b3306579ad
+PODFILE CHECKSUM: b838186ed4fadd62fccf587024158bebfbdc846a
 
 COCOAPODS: 1.0.1

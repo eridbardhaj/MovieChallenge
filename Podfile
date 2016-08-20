@@ -4,4 +4,7 @@ use_frameworks!
 target 'MovieChallenge' do
     pod 'Alamofire'
     pod 'ObjectMapper'
+    pod 'RxSwift'
+    pod 'RxCocoa'
+    pod 'RxOptional'
 end
