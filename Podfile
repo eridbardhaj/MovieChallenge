@@ -7,4 +7,5 @@ target 'MovieChallenge' do
     pod 'RxSwift'
     pod 'RxCocoa'
     pod 'RxOptional'
+    pod 'SDWebImage'
 end
