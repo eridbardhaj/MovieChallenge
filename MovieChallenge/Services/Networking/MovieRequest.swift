@@ -32,7 +32,9 @@ struct MovieRequest {
         }
         
         var parameters: [String : AnyObject]? {
-            return ["extended": "full,images"]
+            return ["extended": "full,images",
+                    "page": "\(page)",
+                    "limit": "10"]
         }
         
         var extraHeaders: [String : String]? {
