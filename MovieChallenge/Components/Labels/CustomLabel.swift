@@ -10,6 +10,9 @@ import UIKit
 
 @IBDesignable
 class CustomLabel: UILabel {
+    
+    // MARK: - Inspectables
+    
     @IBInspectable var cornerRadius: CGFloat = 2.0 {
         didSet {
             layer.cornerRadius = cornerRadius

@@ -19,13 +19,14 @@ class PopularMoviesTableViewCell: UITableViewCell {
     @IBOutlet weak var yearReleasedLabel: UILabel!
     @IBOutlet weak var averageRatingLabel: UILabel!
     @IBOutlet weak var voteCountLabel: UILabel!
+    @IBOutlet weak var movieOverview: UILabel!
     
     // MARK: - Overrides
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         
+        // Clear any design made on IB
         updateEmptyUI()
     }
     
@@ -38,18 +39,22 @@ class PopularMoviesTableViewCell: UITableViewCell {
         }
         
         movieTitleLabel.text = model.title
+        movieOverview.text = model.overview
         certificationLabel.text = model.certification
         yearReleasedLabel.text = String(model.year)
         averageRatingLabel.text = String(format: "%.1f", model.rating)
         voteCountLabel.text = String(model.votes)
         
-        let posterImgURL = NSURL(string: model.posterImgUrlString)
-        posterImageView.setImageUrlAnimated(posterImgURL!)
         
+        if let imageUrlString = model.posterImgUrlString,
+            let posterImgURL = NSURL(string: imageUrlString) {
+            posterImageView.setImageUrlAnimated(posterImgURL)
+        }
     }
     
     private func updateEmptyUI() {
         movieTitleLabel.text = "N/A"
+        movieOverview.text = ""
         certificationLabel.text = "N/A"
         yearReleasedLabel.text = "N/A"
         averageRatingLabel.text = "N/A"
