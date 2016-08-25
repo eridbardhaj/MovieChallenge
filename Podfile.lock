@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (3.3.1)
+  - ObjectMapper (1.2.0)
+  - RxCocoa (2.3.1):
+    - RxSwift (~> 2.3.1)
+  - RxOptional (2.0.0):
+    - RxCocoa (~> 2.0)
+    - RxSwift (~> 2.0)
+  - RxSwift (2.3.1)
+  - SDWebImage (3.7.5):
+    - SDWebImage/Core (= 3.7.5)
+  - SDWebImage/Core (3.7.5)
+
+DEPENDENCIES:
+  - Alamofire
+  - ObjectMapper
+  - RxCocoa
+  - RxOptional
+  - RxSwift
+  - SDWebImage
+
+SPEC CHECKSUMS:
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  ObjectMapper: b1e9c7c8a9f6400b72690c80072c131504caa66f
+  RxCocoa: a2baaf3462b989559a51dce59d78fbebb8fe0afa
+  RxOptional: b77fb47a0190213cf8a37c7a2b7fda28160b4563
+  RxSwift: 829b2843e9eddc77a02cb3f5117f0d55f8f646f1
+  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+
+PODFILE CHECKSUM: b6e5353912bfe29a18cee88a84f5866a2af92bbe
+
+COCOAPODS: 1.0.1
