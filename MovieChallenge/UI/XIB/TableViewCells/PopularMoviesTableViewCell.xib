@@ -7,14 +7,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PopularMoviesTableViewCell" rowHeight="185" id="xno-qC-l0h" customClass="PopularMoviesTableViewCell" customModule="MovieChallenge" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="185"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PopularMoviesTableViewCell" rowHeight="173" id="xno-qC-l0h" customClass="PopularMoviesTableViewCell" customModule="MovieChallenge" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="173"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xno-qC-l0h" id="4Ko-go-vWU">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="184.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="172.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kXO-qo-D1F">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kXO-qo-D1F">
                         <rect key="frame" x="15" y="15" width="80" height="100"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="100" id="7QU-Us-Oeg"/>
@@ -27,10 +27,10 @@
                         <color key="textColor" red="0.058823529411764705" green="0.062745098039215685" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="R" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7j-LW-Y0C" customClass="CustomLabel" customModule="MovieChallenge" customModuleProvider="target">
-                        <rect key="frame" x="103" y="56" width="20" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="PG-13" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7j-LW-Y0C" customClass="CustomLabel" customModule="MovieChallenge" customModuleProvider="target">
+                        <rect key="frame" x="103" y="56" width="45" height="17"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="20" id="f80-t1-aYm"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="f80-t1-aYm"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="15"/>
                         <color key="textColor" red="0.21176470588235294" green="0.22352941176470587" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
@@ -48,7 +48,7 @@
                         </userDefinedRuntimeAttributes>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yla-q1-i5S">
-                        <rect key="frame" x="138" y="56" width="167" height="17"/>
+                        <rect key="frame" x="163" y="56" width="142" height="17"/>
                         <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="15"/>
                         <color key="textColor" red="0.058823529409999999" green="0.062745098040000002" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -82,8 +82,8 @@
                         <color key="textColor" red="0.21176470589999999" green="0.22352941179999999" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYL-ez-oVq">
-                        <rect key="frame" x="15" y="123" width="290" height="46.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="754" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYL-ez-oVq">
+                        <rect key="frame" x="15" y="123" width="290" height="34.5"/>
                         <string key="text">As a cowardly farmer begins to fall for the mysterious new woman in town, he must put his new-found courage to the test when her husband, a notorious gun-slinger, announces his arrival.</string>
                         <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="15"/>
                         <color key="textColor" red="0.058823529409999999" green="0.062745098040000002" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -120,12 +120,13 @@
             <connections>
                 <outlet property="averageRatingLabel" destination="2i6-lD-xZq" id="gHJ-FE-vAV"/>
                 <outlet property="certificationLabel" destination="S7j-LW-Y0C" id="LZo-yg-yaT"/>
+                <outlet property="movieOverview" destination="fYL-ez-oVq" id="Evs-iB-e92"/>
                 <outlet property="movieTitleLabel" destination="lMs-sB-gKt" id="T11-gN-4q5"/>
                 <outlet property="posterImageView" destination="kXO-qo-D1F" id="T8S-8Y-D08"/>
                 <outlet property="voteCountLabel" destination="cuB-1G-CJO" id="WEq-og-3NT"/>
                 <outlet property="yearReleasedLabel" destination="yla-q1-i5S" id="d6h-9a-tib"/>
             </connections>
-            <point key="canvasLocation" x="394" y="407.5"/>
+            <point key="canvasLocation" x="394" y="401.5"/>
         </tableViewCell>
     </objects>
     <resources>
