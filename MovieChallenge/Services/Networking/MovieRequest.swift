@@ -31,6 +31,16 @@ struct MovieRequest {
             return .GET
         }
         
+        var parameters: [String : AnyObject]? {
+            return ["extended": "full,images"]
+        }
+        
+        var extraHeaders: [String : String]? {
+            return ["Content-Type": "application/json",
+                    "trakt-api-version": "2",
+                    "trakt-api-key": Constants.API.key]
+        }
+        
         // MARK: PaginationRequestType
         
         func requestWithPage(page: Int) -> PopularList {
