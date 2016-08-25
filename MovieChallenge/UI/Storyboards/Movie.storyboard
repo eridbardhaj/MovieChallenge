@@ -12,6 +12,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="rSD-lA-Td7">
+                            <rect key="frame" x="0.0" y="64" width="320" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="u8N-HJ-5J2">
+                                    <rect key="frame" x="150" y="20" width="20" height="20"/>
+                                </activityIndicatorView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="u8N-HJ-5J2" firstAttribute="centerY" secondItem="rSD-lA-Td7" secondAttribute="centerY" id="2IR-0C-qPW"/>
+                                <constraint firstItem="u8N-HJ-5J2" firstAttribute="centerX" secondItem="rSD-lA-Td7" secondAttribute="centerX" id="ZnS-rW-iAh"/>
+                            </constraints>
+                        </view>
                         <connections>
                             <outlet property="dataSource" destination="wkd-Qs-4Go" id="40H-7S-JrI"/>
                             <outlet property="delegate" destination="wkd-Qs-4Go" id="jsM-a5-LN3"/>
@@ -19,6 +33,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="PopularMovies" id="BNt-E9-nFA"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="indicatorView" destination="u8N-HJ-5J2" id="y8S-ND-8fk"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mga-rc-SaC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
