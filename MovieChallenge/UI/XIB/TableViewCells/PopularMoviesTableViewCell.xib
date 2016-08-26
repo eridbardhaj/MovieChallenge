@@ -14,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="172.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kXO-qo-D1F">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" verticalCompressionResistancePriority="754" translatesAutoresizingMaskIntoConstraints="NO" id="kXO-qo-D1F">
                         <rect key="frame" x="15" y="15" width="80" height="100"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="100" id="7QU-Us-Oeg"/>
@@ -22,7 +22,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Million Ways to Die in the West" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMs-sB-gKt">
-                        <rect key="frame" x="103" y="15" width="194" height="33.5"/>
+                        <rect key="frame" x="103" y="15" width="202" height="33.5"/>
                         <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="15"/>
                         <color key="textColor" red="0.058823529411764705" green="0.062745098039215685" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -53,7 +53,7 @@
                         <color key="textColor" red="0.058823529409999999" green="0.062745098040000002" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico-rating-star" translatesAutoresizingMaskIntoConstraints="NO" id="8F4-F3-0Rv">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico-rating-star" translatesAutoresizingMaskIntoConstraints="NO" id="8F4-F3-0Rv">
                         <rect key="frame" x="103" y="95" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="2xO-Hg-31Z"/>
@@ -69,7 +69,7 @@
                         <color key="textColor" red="0.21176470589999999" green="0.22352941179999999" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico-voting-count" translatesAutoresizingMaskIntoConstraints="NO" id="wuE-72-WzF">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico-voting-count" translatesAutoresizingMaskIntoConstraints="NO" id="wuE-72-WzF">
                         <rect key="frame" x="166" y="95" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="RLd-xX-gtG"/>
@@ -82,8 +82,12 @@
                         <color key="textColor" red="0.21176470589999999" green="0.22352941179999999" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="754" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYL-ez-oVq">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="754" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYL-ez-oVq">
                         <rect key="frame" x="15" y="123" width="290" height="34.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="1" id="IwU-Ih-GL8"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="UB3-2x-Zvm"/>
+                        </constraints>
                         <string key="text">As a cowardly farmer begins to fall for the mysterious new woman in town, he must put his new-found courage to the test when her husband, a notorious gun-slinger, announces his arrival.</string>
                         <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="15"/>
                         <color key="textColor" red="0.058823529409999999" green="0.062745098040000002" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -95,17 +99,18 @@
                     <constraint firstItem="S7j-LW-Y0C" firstAttribute="leading" secondItem="lMs-sB-gKt" secondAttribute="leading" id="2UB-bA-Kr5"/>
                     <constraint firstItem="lMs-sB-gKt" firstAttribute="leading" secondItem="kXO-qo-D1F" secondAttribute="trailing" constant="8" id="5Mh-2Q-cD1"/>
                     <constraint firstItem="8F4-F3-0Rv" firstAttribute="leading" secondItem="kXO-qo-D1F" secondAttribute="trailing" constant="8" id="6NI-RO-w48"/>
+                    <constraint firstItem="yla-q1-i5S" firstAttribute="top" secondItem="lMs-sB-gKt" secondAttribute="bottom" constant="7.5" id="6V7-H9-xcU"/>
                     <constraint firstItem="2i6-lD-xZq" firstAttribute="leading" secondItem="8F4-F3-0Rv" secondAttribute="trailing" constant="4" id="6y0-XP-Vlk"/>
                     <constraint firstAttribute="trailing" secondItem="fYL-ez-oVq" secondAttribute="trailing" constant="15" id="74N-WY-wvu"/>
                     <constraint firstItem="cuB-1G-CJO" firstAttribute="leading" secondItem="wuE-72-WzF" secondAttribute="trailing" constant="4" id="9mu-BG-LsH"/>
                     <constraint firstItem="yla-q1-i5S" firstAttribute="leading" secondItem="S7j-LW-Y0C" secondAttribute="trailing" constant="15" id="D39-Xm-QKK"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="lMs-sB-gKt" secondAttribute="trailing" constant="15" id="FNM-Dz-JuS"/>
                     <constraint firstItem="8F4-F3-0Rv" firstAttribute="bottom" secondItem="kXO-qo-D1F" secondAttribute="bottom" id="I0t-Ru-Odb"/>
                     <constraint firstItem="cuB-1G-CJO" firstAttribute="bottom" secondItem="wuE-72-WzF" secondAttribute="bottom" id="JhE-Wg-OQ9"/>
                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="cuB-1G-CJO" secondAttribute="trailing" constant="15" id="Mib-Xk-CgN"/>
                     <constraint firstItem="kXO-qo-D1F" firstAttribute="leading" secondItem="4Ko-go-vWU" secondAttribute="leading" constant="15" id="Onn-KQ-Yql"/>
                     <constraint firstItem="wuE-72-WzF" firstAttribute="bottom" secondItem="2i6-lD-xZq" secondAttribute="bottom" id="Pua-rd-YMJ"/>
                     <constraint firstAttribute="trailing" secondItem="yla-q1-i5S" secondAttribute="trailing" constant="15" id="Rsl-Om-s9h"/>
+                    <constraint firstAttribute="trailing" secondItem="lMs-sB-gKt" secondAttribute="trailing" constant="15" id="WW9-qi-E2m"/>
                     <constraint firstItem="8F4-F3-0Rv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="S7j-LW-Y0C" secondAttribute="bottom" constant="5" id="YFR-iR-g14"/>
                     <constraint firstAttribute="bottom" secondItem="fYL-ez-oVq" secondAttribute="bottom" constant="15" id="Ypc-RL-7IW"/>
                     <constraint firstItem="fYL-ez-oVq" firstAttribute="leading" secondItem="4Ko-go-vWU" secondAttribute="leading" constant="15" id="bT3-pd-vgR"/>
@@ -113,7 +118,6 @@
                     <constraint firstItem="kXO-qo-D1F" firstAttribute="top" secondItem="4Ko-go-vWU" secondAttribute="top" constant="15" id="fVf-sJ-dxN"/>
                     <constraint firstItem="wuE-72-WzF" firstAttribute="leading" secondItem="2i6-lD-xZq" secondAttribute="trailing" constant="20" id="qeo-YD-aYx"/>
                     <constraint firstItem="S7j-LW-Y0C" firstAttribute="top" secondItem="lMs-sB-gKt" secondAttribute="bottom" constant="8" id="sBt-hr-RXf"/>
-                    <constraint firstItem="yla-q1-i5S" firstAttribute="bottom" secondItem="S7j-LW-Y0C" secondAttribute="bottom" id="wGV-aX-6oe"/>
                     <constraint firstItem="2i6-lD-xZq" firstAttribute="bottom" secondItem="8F4-F3-0Rv" secondAttribute="bottom" id="zXp-Wh-fxG"/>
                 </constraints>
             </tableViewCellContentView>

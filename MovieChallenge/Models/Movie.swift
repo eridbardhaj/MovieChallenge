@@ -10,25 +10,19 @@ import ObjectMapper
 
 public class Movie: Mappable {
     var traktId: Int?
-    var title: String!
-    var year: Int!
-    var overview: String!
-    var rating: Float!
-    var votes: Int!
-    var certification: String!
+    var title: String?
+    var year: Int?
+    var overview: String?
+    var rating: Float?
+    var votes: Int?
+    var certification: String?
     var posterImgUrlString: String?
     
     // MARK: - Protocol Conformance
+    
     // MARK: Mappable
     
-    public required init?(_ map: Map) {
-        guard let _ = map["year"].currentValue,
-            let _ = map["rating"].currentValue,
-            let _ = map["votes"].currentValue,
-            let _ = map["certification"].currentValue else {
-                return nil
-        }
-    }
+    public required init?(_ map: Map) {}
     
     public func mapping(map: Map) {
         traktId                 <- map["ids.trakt"]

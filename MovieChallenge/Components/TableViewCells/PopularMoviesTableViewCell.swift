@@ -10,7 +10,7 @@ import UIKit
 
 class PopularMoviesTableViewCell: UITableViewCell {
     // Constants
-    static let cellIdentifier = String(self)
+    static let cellIdentifier = String(PopularMoviesTableViewCell.self)
     
     // Outlets
     @IBOutlet weak var posterImageView: UIImageView!
@@ -35,16 +35,12 @@ class PopularMoviesTableViewCell: UITableViewCell {
     func updateUI(model: Movie?) {
         guard let model = model else {
             updateEmptyUI()
+            
             return
         }
         
-        movieTitleLabel.text = model.title
+        clearOptionalValues(model)
         movieOverview.text = model.overview
-        certificationLabel.text = model.certification
-        yearReleasedLabel.text = String(model.year)
-        averageRatingLabel.text = String(format: "%.1f", model.rating)
-        voteCountLabel.text = String(model.votes)
-        
         
         if let imageUrlString = model.posterImgUrlString,
             let posterImgURL = NSURL(string: imageUrlString) {
@@ -52,12 +48,37 @@ class PopularMoviesTableViewCell: UITableViewCell {
         }
     }
     
+    
+    // MARK: - Helpers
+    
     private func updateEmptyUI() {
-        movieTitleLabel.text = "N/A"
+        movieTitleLabel.text = ""
         movieOverview.text = ""
         certificationLabel.text = "N/A"
-        yearReleasedLabel.text = "N/A"
-        averageRatingLabel.text = "N/A"
+        yearReleasedLabel.text = ""
+        averageRatingLabel.text = ""
         voteCountLabel.text = "0"
+    }
+    
+    private func clearOptionalValues(model: Movie) {
+        if let title = model.title {
+            self.movieTitleLabel.text = title
+        }
+        
+        if let cerfification = model.certification {
+            self.certificationLabel.text = cerfification
+        }
+        
+        if let year = model.year {
+            self.yearReleasedLabel.text = String(year)
+        }
+        
+        if let rating = model.rating {
+            self.averageRatingLabel.text = String(format: "%.1f", rating)
+        }
+        
+        if let votes = model.votes {
+            self.voteCountLabel.text = String(votes)
+        }
     }
 }

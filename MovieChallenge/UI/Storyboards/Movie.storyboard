@@ -31,7 +31,13 @@
                             <outlet property="delegate" destination="wkd-Qs-4Go" id="jsM-a5-LN3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="PopularMovies" id="BNt-E9-nFA"/>
+                    <navigationItem key="navigationItem" title="PopularMovies" id="BNt-E9-nFA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="ig7-vA-GzC">
+                            <connections>
+                                <segue destination="fgS-wv-nTU" kind="show" id="AxE-cR-MOi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="indicatorView" destination="u8N-HJ-5J2" id="y8S-ND-8fk"/>
@@ -40,6 +46,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mga-rc-SaC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="230" y="434"/>
+        </scene>
+        <!--Movies-->
+        <scene sceneID="L7U-96-ptZ">
+            <objects>
+                <tableViewController id="fgS-wv-nTU" customClass="SearchMoviesTableViewController" customModule="MovieChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Movies" id="bAa-WV-P6y"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UlX-8R-bWV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="667" y="434"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pbO-Q7-BgE">

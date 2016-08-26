@@ -15,7 +15,7 @@ class PopularMoviesTableViewController: UITableViewController {
     
     // Vars
     let disposeBag = DisposeBag()
-    let viewModel = PopularMoviesViewModel(baseRequest: MovieRequest.PopularList(page: 1))
+    let viewModel = PopularMovieViewModel(baseRequest: MovieRequest.PopularList(page: 1))
     
     // MARK: - View Lifecycle
     
@@ -30,6 +30,7 @@ class PopularMoviesTableViewController: UITableViewController {
     
     func setupTableView() {
         tableView.dataSource = nil
+        tableView.tableFooterView = UIView()
         tableView.registerNib(UINib(nibName: String(PopularMoviesTableViewCell.self), bundle: nil), forCellReuseIdentifier: PopularMoviesTableViewCell.cellIdentifier)
     }
     

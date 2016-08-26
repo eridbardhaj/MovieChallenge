@@ -1,8 +1,8 @@
 //
-//  PopularMovieViewModel.swift
+//  SearchMovieViewModel.swift
 //  MovieChallenge
 //
-//  Created by Erid Bardhaj on 8/21/16.
+//  Created by Erid Bardhaj on 8/26/16.
 //  Copyright © 2016 trivago GmbH. All rights reserved.
 //
 
@@ -11,36 +11,33 @@ import Alamofire
 import RxCocoa
 import RxSwift
 
-class PopularMoviesViewModel<PaginationRequest: PaginationRequestType> {
-    let refreshTrigger = PublishSubject<Void>()
+class SearchMovieViewModel<PaginationRequest: PaginationRequestType> {
+    let refreshTrigger = PublishSubject<String>()
     let loadNextPageTrigger = PublishSubject<Void>()
     
     let hasNextPage = Variable<Bool>(false)
     let loading = Variable<Bool>(false)
-    let elements = Variable<[PaginationRequest.Response.Element]>([])
+    let elements = Variable<[MovieRequest.Search.Response.Element]>([])
     let lastLoadedPage = Variable<Int?>(nil)
+    let query = Variable<String>("")
     
     let error = PublishSubject<ErrorType>()
     
     private let disposeBag = DisposeBag()
     
-    init(baseRequest: PaginationRequest) {
-        let refreshRequest = loading.asObservable()
-            .sample(refreshTrigger)
-            .flatMap { loading -> Observable<PaginationRequest> in
-                if loading {
-                    return Observable.empty()
-                } else {
-                    return Observable.of(baseRequest.requestWithPage(1))
-                }
+    init(baseRequest: MovieRequest.Search) {
+        let refreshRequest = query.asObservable()
+            .flatMap { query -> Observable<MovieRequest.Search> in
+                return Observable.of(baseRequest.request(query, page: 1))
         }
         
+        let observ = query.asObservable()
         let nextPageRequest = Observable
-            .combineLatest(loading.asObservable(), hasNextPage.asObservable(), lastLoadedPage.asObservable()) { $0 }
+            .combineLatest(observ, loading.asObservable(), hasNextPage.asObservable(), lastLoadedPage.asObservable()) { $0 }
             .sample(loadNextPageTrigger)
-            .flatMap { loading, hasNextPage, lastLoadedPage -> Observable<PaginationRequest> in
+            .flatMap { query, loading, hasNextPage, lastLoadedPage -> Observable<MovieRequest.Search> in
                 if let page = lastLoadedPage where !loading && hasNextPage {
-                    return Observable.of(baseRequest.requestWithPage(page + 1))
+                    return Observable.of(baseRequest.request(query, page: page + 1))
                 } else {
                     return Observable.empty()
                 }
