@@ -95,6 +95,7 @@
                     <constraint firstItem="S7j-LW-Y0C" firstAttribute="leading" secondItem="lMs-sB-gKt" secondAttribute="leading" id="2UB-bA-Kr5"/>
                     <constraint firstItem="lMs-sB-gKt" firstAttribute="leading" secondItem="kXO-qo-D1F" secondAttribute="trailing" constant="8" id="5Mh-2Q-cD1"/>
                     <constraint firstItem="8F4-F3-0Rv" firstAttribute="leading" secondItem="kXO-qo-D1F" secondAttribute="trailing" constant="8" id="6NI-RO-w48"/>
+                    <constraint firstItem="yla-q1-i5S" firstAttribute="top" secondItem="lMs-sB-gKt" secondAttribute="bottom" constant="7.5" id="6V7-H9-xcU"/>
                     <constraint firstItem="2i6-lD-xZq" firstAttribute="leading" secondItem="8F4-F3-0Rv" secondAttribute="trailing" constant="4" id="6y0-XP-Vlk"/>
                     <constraint firstAttribute="trailing" secondItem="fYL-ez-oVq" secondAttribute="trailing" constant="15" id="74N-WY-wvu"/>
                     <constraint firstItem="cuB-1G-CJO" firstAttribute="leading" secondItem="wuE-72-WzF" secondAttribute="trailing" constant="4" id="9mu-BG-LsH"/>
@@ -116,6 +117,11 @@
                     <constraint firstItem="yla-q1-i5S" firstAttribute="bottom" secondItem="S7j-LW-Y0C" secondAttribute="bottom" id="wGV-aX-6oe"/>
                     <constraint firstItem="2i6-lD-xZq" firstAttribute="bottom" secondItem="8F4-F3-0Rv" secondAttribute="bottom" id="zXp-Wh-fxG"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="wGV-aX-6oe"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="averageRatingLabel" destination="2i6-lD-xZq" id="gHJ-FE-vAV"/>

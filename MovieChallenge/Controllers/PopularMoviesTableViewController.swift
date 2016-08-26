@@ -30,6 +30,7 @@ class PopularMoviesTableViewController: UITableViewController {
     
     func setupTableView() {
         tableView.dataSource = nil
+        tableView.tableFooterView = UIView()
         tableView.registerNib(UINib(nibName: String(PopularMoviesTableViewCell.self), bundle: nil), forCellReuseIdentifier: PopularMoviesTableViewCell.cellIdentifier)
     }
     

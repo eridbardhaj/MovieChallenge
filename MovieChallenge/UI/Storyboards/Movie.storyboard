@@ -34,7 +34,7 @@
                     <navigationItem key="navigationItem" title="PopularMovies" id="BNt-E9-nFA">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="ig7-vA-GzC">
                             <connections>
-                                <segue destination="fgS-wv-nTU" kind="show" id="VwC-IA-iub"/>
+                                <segue destination="fgS-wv-nTU" kind="show" id="AxE-cR-MOi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -51,28 +51,11 @@
         <scene sceneID="L7U-96-ptZ">
             <objects>
                 <tableViewController id="fgS-wv-nTU" customClass="SearchMoviesTableViewController" customModule="MovieChallenge" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1vZ-GN-NPL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableFooterView" contentMode="redraw" placeholder="Search movies" id="O9E-le-tvT">
-                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
-                        <connections>
-                            <outlet property="dataSource" destination="fgS-wv-nTU" id="VNK-fl-aUW"/>
-                            <outlet property="delegate" destination="fgS-wv-nTU" id="Zxx-HZ-5wh"/>
-                        </connections>
-                    </tableView>
                     <navigationItem key="navigationItem" title="Movies" id="bAa-WV-P6y"/>
-                    <connections>
-                        <outlet property="searchBar" destination="O9E-le-tvT" id="Txw-Eh-RtH"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UlX-8R-bWV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="694" y="434"/>
+            <point key="canvasLocation" x="667" y="434"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pbO-Q7-BgE">

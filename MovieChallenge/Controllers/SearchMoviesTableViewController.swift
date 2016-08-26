@@ -11,32 +11,32 @@ import RxCocoa
 import RxSwift
 
 class SearchMoviesTableViewController: UITableViewController {
-    // Outlets
-    @IBOutlet weak var searchBar: UISearchBar!
-    
     // Vars
+    var searchController: UISearchController! = nil
     let disposeBag = DisposeBag()
     let viewModel = SearchMovieViewModel(baseRequest: MovieRequest.Search(query: "", page: 1))
     var latestMovieName: Observable<String> {
-        return searchBar
+        return searchController
+            .searchBar
             .rx_text
             .throttle(0.5, scheduler: MainScheduler.instance)
-            .filter { $0.characters.count > 0 }
+            .filter { $0.characters.count >= 3 }
             .distinctUntilChanged()
     }
     
-    // MARK - View lifecycle
+    // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupSearchBar()
         setupTableView()
         configureRx()
     }
     
     // MARK: - Setups
     
-    func configureRx() {        
+    func configureRx() {
         latestMovieName
             .bindTo(viewModel.query)
             .addDisposableTo(disposeBag)
@@ -47,18 +47,31 @@ class SearchMoviesTableViewController: UITableViewController {
             }
             .addDisposableTo(disposeBag)
         
+        tableView.rx_reachedBottom
+            .bindTo(viewModel.loadNextPageTrigger)
+            .addDisposableTo(disposeBag)
+        
         tableView
             .rx_itemSelected
             .subscribeNext { indexPath in
-                if self.searchBar.isFirstResponder() == true {
+                if self.searchController.searchBar.isFirstResponder() == true {
                     self.view.endEditing(true)
                 }
             }
             .addDisposableTo(disposeBag)
     }
     
+    func setupSearchBar() {
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
+    }
+    
     func setupTableView() {
         tableView.dataSource = nil
+        tableView.delegate = self
+        tableView.tableFooterView = UIView()
         tableView.registerNib(UINib(nibName: String(PopularMoviesTableViewCell.self), bundle: nil), forCellReuseIdentifier: PopularMoviesTableViewCell.cellIdentifier)
     }
 }

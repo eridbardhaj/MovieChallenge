@@ -26,15 +26,9 @@ class SearchMovieViewModel<PaginationRequest: PaginationRequestType> {
     private let disposeBag = DisposeBag()
     
     init(baseRequest: PaginationRequest) {
-        let refreshRequest = Observable
-            .combineLatest(loading.asObservable(), query.asObservable()) { $0 }
-            .sample(query.asObservable())
-            .flatMap { (loading, query) -> Observable<PaginationRequest> in
-                if loading {
-                    return Observable.empty()
-                } else {
-                    return Observable.of(baseRequest.requestWithQuery(query))
-                }
+        let refreshRequest = query.asObservable()
+            .flatMap { query -> Observable<PaginationRequest> in
+                return Observable.of(baseRequest.requestWithQuery(query))
         }
         
         let nextPageRequest = Observable
