@@ -15,7 +15,7 @@ class PopularMoviesTableViewController: UITableViewController {
     
     // Vars
     let disposeBag = DisposeBag()
-    let viewModel = PopularMoviesViewModel(baseRequest: MovieRequest.PopularList(page: 1))
+    let viewModel = PopularMovieViewModel(baseRequest: MovieRequest.PopularList(page: 1))
     
     // MARK: - View Lifecycle
     

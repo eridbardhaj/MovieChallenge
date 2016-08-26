@@ -11,7 +11,8 @@ import Alamofire
 import RxCocoa
 import RxSwift
 
-class PopularMoviesViewModel<PaginationRequest: PaginationRequestType> {
+class PopularMovieViewModel<PaginationRequest: PaginationRequestType> {
+    
     let refreshTrigger = PublishSubject<Void>()
     let loadNextPageTrigger = PublishSubject<Void>()
     

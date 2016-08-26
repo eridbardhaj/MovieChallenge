@@ -1,4 +1,4 @@
-//
+    //
 //  MovieRequest.swift
 //  MovieChallenge
 //
@@ -48,9 +48,13 @@ struct MovieRequest {
         func requestWithPage(page: Int) -> PopularList {
             return PopularList(page: page)
         }
+        
+        func requestWithQuery(query: String) -> PopularList {
+            return PopularList(page: 1)
+        }
     }
     
-    struct SearchMovies: RESTTargetType, PaginationRequestType {
+    struct Search: RESTTargetType, PaginationRequestType {
         let query: String
         let page: Int
         
@@ -66,7 +70,7 @@ struct MovieRequest {
         typealias Response = PaginationResponse<Movie>
         
         var path: String {
-            return "/search/movies"
+            return "/search/movie"
         }
         
         var method: Alamofire.Method {
@@ -88,8 +92,35 @@ struct MovieRequest {
         
         // MARK: PaginationRequestType
         
-        func requestWithPage(page: Int) -> SearchMovies {
-            return SearchMovies(query: query, page: page)
+        func requestWithPage(page: Int) -> Search {
+            return Search(query: query, page: page)
+        }
+        
+        func requestWithQuery(query: String) -> Search {
+            return Search(query: query, page: 1)
+        }
+        
+        // Override the default behavior as the model is not the root model
+        func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> Response {
+            let pageLinks = URLResponse.findPageLinks()
+            
+            var elements: [Response.Element] = []
+            
+            guard let objects = object as? NSArray else {
+                throw Error.Custom("Malformed data")
+            }
+
+            for dictionary in objects {
+                guard let dictionary = dictionary as? NSDictionary,
+                    let movieObject = dictionary["movie"] else {
+                    throw Error.Custom("No movie conforming object")
+                }
+                
+                let element = try GoditMapper<Response.Element>.map(movieObject)
+                elements.append(element)
+            }
+            
+            return Response(elements: elements, previousPage: pageLinks.previous, nextPage: pageLinks.next)
         }
     }
 }

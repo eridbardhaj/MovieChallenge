@@ -10,7 +10,7 @@ import UIKit
 
 class PopularMoviesTableViewCell: UITableViewCell {
     // Constants
-    static let cellIdentifier = String(self)
+    static let cellIdentifier = String(PopularMoviesTableViewCell.self)
     
     // Outlets
     @IBOutlet weak var posterImageView: UIImageView!

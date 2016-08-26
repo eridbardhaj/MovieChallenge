@@ -13,4 +13,5 @@ protocol PaginationRequestType: RESTTargetType {
     var page: Int { get }
     
     func requestWithPage(page: Int) -> Self
+    func requestWithQuery(query: String) -> Self
 }

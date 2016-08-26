@@ -40,7 +40,13 @@ extension NetworkService {
                             observer.onError(Error.Custom("Could not map the object"))
                         }
                     } else {
-                        observer.onError(Error.Custom("Request is not successful"))
+                        guard let error = response.result.error else {
+                            observer.onError(Error.Custom("Request is failing"))
+                            
+                            return
+                        }
+                        
+                        observer.onError(error)
                     }
                 })
             return AnonymousDisposable {
