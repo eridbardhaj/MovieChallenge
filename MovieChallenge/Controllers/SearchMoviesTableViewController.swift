@@ -14,7 +14,7 @@ class SearchMoviesTableViewController: UITableViewController {
     // Vars
     var searchController: UISearchController! = nil
     let disposeBag = DisposeBag()
-    let viewModel = SearchMovieViewModel(baseRequest: MovieRequest.Search(query: "", page: 1))
+    let viewModel = SearchMovieViewModel<MovieRequest.Search>(baseRequest: MovieRequest.Search(query: "", page: 1))
     var latestMovieName: Observable<String> {
         return searchController
             .searchBar

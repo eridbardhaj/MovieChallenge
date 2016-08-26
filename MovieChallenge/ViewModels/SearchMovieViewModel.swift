@@ -17,7 +17,7 @@ class SearchMovieViewModel<PaginationRequest: PaginationRequestType> {
     
     let hasNextPage = Variable<Bool>(false)
     let loading = Variable<Bool>(false)
-    let elements = Variable<[PaginationRequest.Response.Element]>([])
+    let elements = Variable<[MovieRequest.Search.Response.Element]>([])
     let lastLoadedPage = Variable<Int?>(nil)
     let query = Variable<String>("")
     
@@ -25,18 +25,19 @@ class SearchMovieViewModel<PaginationRequest: PaginationRequestType> {
     
     private let disposeBag = DisposeBag()
     
-    init(baseRequest: PaginationRequest) {
+    init(baseRequest: MovieRequest.Search) {
         let refreshRequest = query.asObservable()
-            .flatMap { query -> Observable<PaginationRequest> in
-                return Observable.of(baseRequest.requestWithQuery(query))
+            .flatMap { query -> Observable<MovieRequest.Search> in
+                return Observable.of(baseRequest.request(query, page: 1))
         }
         
+        let observ = query.asObservable()
         let nextPageRequest = Observable
-            .combineLatest(loading.asObservable(), hasNextPage.asObservable(), lastLoadedPage.asObservable()) { $0 }
+            .combineLatest(observ, loading.asObservable(), hasNextPage.asObservable(), lastLoadedPage.asObservable()) { $0 }
             .sample(loadNextPageTrigger)
-            .flatMap { loading, hasNextPage, lastLoadedPage -> Observable<PaginationRequest> in
+            .flatMap { query, loading, hasNextPage, lastLoadedPage -> Observable<MovieRequest.Search> in
                 if let page = lastLoadedPage where !loading && hasNextPage {
-                    return Observable.of(baseRequest.requestWithPage(page + 1))
+                    return Observable.of(baseRequest.request(query, page: page + 1))
                 } else {
                     return Observable.empty()
                 }

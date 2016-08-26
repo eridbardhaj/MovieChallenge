@@ -55,7 +55,7 @@ struct MovieRequest {
     }
     
     struct Search: RESTTargetType, PaginationRequestType {
-        let query: String
+        var query: String?
         let page: Int
         
         init(let query: String, page: Int = 1) {
@@ -81,7 +81,7 @@ struct MovieRequest {
             return ["extended": "full,images",
                     "page": "\(page)",
                     "limit": "10",
-                    "query": query]
+                    "query": query!]
         }
         
         var extraHeaders: [String : String]? {
@@ -93,11 +93,15 @@ struct MovieRequest {
         // MARK: PaginationRequestType
         
         func requestWithPage(page: Int) -> Search {
-            return Search(query: query, page: page)
+            return Search(query: query!, page: page)
         }
         
         func requestWithQuery(query: String) -> Search {
             return Search(query: query, page: 1)
+        }
+        
+        func request(query: String, page: Int) -> Search {
+            return Search(query: query, page: page)
         }
         
         // Override the default behavior as the model is not the root model
