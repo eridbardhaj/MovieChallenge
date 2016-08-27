@@ -84,10 +84,6 @@
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="754" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYL-ez-oVq">
                         <rect key="frame" x="15" y="123" width="290" height="34.5"/>
-                        <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="1" id="IwU-Ih-GL8"/>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="UB3-2x-Zvm"/>
-                        </constraints>
                         <string key="text">As a cowardly farmer begins to fall for the mysterious new woman in town, he must put his new-found courage to the test when her husband, a notorious gun-slinger, announces his arrival.</string>
                         <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="15"/>
                         <color key="textColor" red="0.058823529409999999" green="0.062745098040000002" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -104,7 +100,7 @@
                     <constraint firstAttribute="trailing" secondItem="fYL-ez-oVq" secondAttribute="trailing" constant="15" id="74N-WY-wvu"/>
                     <constraint firstItem="cuB-1G-CJO" firstAttribute="leading" secondItem="wuE-72-WzF" secondAttribute="trailing" constant="4" id="9mu-BG-LsH"/>
                     <constraint firstItem="yla-q1-i5S" firstAttribute="leading" secondItem="S7j-LW-Y0C" secondAttribute="trailing" constant="15" id="D39-Xm-QKK"/>
-                    <constraint firstItem="8F4-F3-0Rv" firstAttribute="bottom" secondItem="kXO-qo-D1F" secondAttribute="bottom" id="I0t-Ru-Odb"/>
+                    <constraint firstItem="8F4-F3-0Rv" firstAttribute="bottom" secondItem="kXO-qo-D1F" secondAttribute="bottom" priority="999" id="I0t-Ru-Odb"/>
                     <constraint firstItem="cuB-1G-CJO" firstAttribute="bottom" secondItem="wuE-72-WzF" secondAttribute="bottom" id="JhE-Wg-OQ9"/>
                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="cuB-1G-CJO" secondAttribute="trailing" constant="15" id="Mib-Xk-CgN"/>
                     <constraint firstItem="kXO-qo-D1F" firstAttribute="leading" secondItem="4Ko-go-vWU" secondAttribute="leading" constant="15" id="Onn-KQ-Yql"/>
